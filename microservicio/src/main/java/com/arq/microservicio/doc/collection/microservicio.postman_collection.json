@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "783434d7-97f4-4e9f-be82-a14c4db6404f",
+		"name": "microservicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5012434"
+	},
+	"item": [
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "getCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cliente_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cliente_path}}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClienteByIdentificacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cliente_path}}/1715789257",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cliente_path}}",
+							"path": [
+								"1715789257"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificacion\":\"1717703969\",\r\n    \"nombre\":\"Freddy\",\r\n    \"apellido\":\"Torres\",\r\n    \"direccion\":\"San Fernando\",\r\n    \"telefono\":\"0995418834\",\r\n    \"genero\":\"M\",\r\n    \"estado\":true,\r\n    \"usuario\":{\r\n      \"email\":\"ftorres@gmail.com\",\r\n      \"password\":\"ysa31SlWeJfSOEGz1zai3w==\",\r\n      \"estado\":true,\r\n      \"fechaCreacion\":\"2024-09-30\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cliente_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cliente_path}}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cliente_path}}/20",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cliente_path}}",
+							"path": [
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"4\",\r\n    \"identificacion\":\"1717703969\",\r\n    \"nombre\":\"Freddy\",\r\n    \"apellido\":\"Torres\",\r\n    \"direccion\":\"San Fernando\",\r\n    \"telefono\":\"0995418834\",\r\n    \"genero\":\"M\",\r\n    \"estado\":true,\r\n    \"fechaActualizacion\":\"2024-09-30\",\r\n    \"usuario\":{\r\n      \"email\":\"freddytorres1.ec@gmail.com\",\r\n      \"password\":\"ysa31SlWeJfSOEGz1zai3w==\",\r\n      \"estado\":true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cliente_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cliente_path}}"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuenta",
+			"item": [
+				{
+					"name": "getCuentaByNumero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cuenta_path}}/225487",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cuenta_path}}",
+							"path": [
+								"225487"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postCuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero\":\"496715\",\r\n    \"estado\":true,\r\n    \"montoinicial\":100,\r\n    \"tipoCuenta\":{\r\n      \"id\":1,\r\n      \"nombre\":\"AHORRO\"\r\n    },\r\n    \"cliente\":{\r\n        \"id\":4,\r\n        \"nombre\":\"Freddy\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cuenta_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cuenta_path}}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putCuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\":6,\r\n   \"numero\":\"225487\",\r\n   \"saldoInicial\":\"100\",\r\n   \"estado\":false,\r\n   \"fechaActualizacion\":null,\r\n   \"tipoCuenta\":{\r\n      \"id\":2,\r\n      \"nombre\":\"CORRIENTE\"\r\n   },\r\n   \"cliente\":{\r\n      \"id\":1,\r\n      \"nombre\":\"Jose\"\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{cuenta_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{cuenta_path}}"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reporte",
+			"item": [
+				{
+					"name": "getEstadoCuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{estadocuenta_path}}/1717703969?fechainicio=2024-10-02&fechafin=2024-10-03",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{estadocuenta_path}}",
+							"path": [
+								"1717703969"
+							],
+							"query": [
+								{
+									"key": "fechainicio",
+									"value": "2024-10-02"
+								},
+								{
+									"key": "fechafin",
+									"value": "2024-10-03"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimiento",
+			"item": [
+				{
+					"name": "postMovimientoDebito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"cuenta\":{\r\n    \"id\":5\r\n   },\r\n   \"tipomovimiento\":{\r\n    \"id\":1,\r\n    \"nombre\":\"DEBITO\"\r\n   },\r\n   \"monto\":\"450\",\r\n   \"descripcion\":\"PAGO PENSION \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{movimiento_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{movimiento_path}}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postMovimientoDeposito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"cuenta\":{\r\n    \"id\":5\r\n   },\r\n   \"tipomovimiento\":{\r\n    \"id\":2,\r\n    \"nombre\":\"DEPOSITO\"\r\n   },\r\n   \"monto\":\"2500\",\r\n   \"descripcion\":\"PAGO SUELDO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{host}}:{{port}}{{movimiento_path}}",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{movimiento_path}}"
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
