@@ -42,6 +42,7 @@ class CuentaServiceTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
     }
+
     @Test
     void testGetCuentaByNumeroFound() {
         when(iCuentaRepository.findByNumeroAndEstadoTrue("123456")).thenReturn(Collections.singletonList(getCuentaEntity()));
@@ -50,12 +51,14 @@ class CuentaServiceTest {
         assertEquals(1, result.size());
         verify(iCuentaRepository).findByNumeroAndEstadoTrue("123456");
     }
+
     @Test
     void testGetCuentaByNumeroNotFound() {
         when(iCuentaRepository.findByNumeroAndEstadoTrue("123456")).thenReturn(Collections.emptyList());
         Exception exception = assertThrows(ResourceNotFoundException.class, () -> cuentaService.getCuentaByNumero("123456"));
         assertEquals("Numero de cuenta : 123456, no  encontrado, o esta inactiva", exception.getMessage());
     }
+
     @Test
     void testSaveCuenta() {
         when(iCuentaRepository.save(any(CuentaEntity.class))).thenReturn(getCuentaEntity());
@@ -81,14 +84,14 @@ class CuentaServiceTest {
         assertEquals("Cuenta con id : 1, no  encontrado.", exception.getMessage());
     }
 
-    static CuentaEntity getCuentaEntity(){
-        CuentaEntity cuentaEntity =new CuentaEntity();
-        cuentaEntity.setId(1L);
-        cuentaEntity.setNumero("123456");
-        cuentaEntity.setEstado(true);
-        cuentaEntity.setMontoinicial(1000.0f);
-        cuentaEntity.setCliente(ClienteEntity.builder().identificacion("1748527847").build());
-        cuentaEntity.setTipoCuenta(TipoCuentaEntity.builder().nombre("AHORRO").build());
-        return cuentaEntity;
+    static CuentaEntity getCuentaEntity() {
+        return CuentaEntity.builder()
+                .id(1L)
+                .numero("123456")
+                .estado(true)
+                .montoinicial(1000.0f)
+                .cliente(ClienteEntity.builder().identificacion("1748527847").build())
+                .tipoCuenta(TipoCuentaEntity.builder().nombre("AHORRO").build())
+                .build();
     }
 }

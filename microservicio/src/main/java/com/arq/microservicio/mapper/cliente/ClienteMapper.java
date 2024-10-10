@@ -11,15 +11,16 @@ import com.arq.microservicio.entity.ClienteEntity;
 
 public class ClienteMapper {
     public static ClienteDto mapToClienteDTO(ClienteEntity cliente) {
-        return new ClienteDto(cliente.getIdentificacion()
-                , cliente.getNombre()
-                , cliente.getApellido()
-                , cliente.getDireccion()
-                , cliente.getTelefono()
-                , cliente.getGenero()
-                , cliente.getEstado()
-                , cliente.getUsuario().getEmail()
-                , cliente.getUsuario().getPassword()
-        );
+        return ClienteDto.builder()
+                .identificacion(cliente.getIdentificacion())
+                .nombre(cliente.getNombre())
+                .apellido(cliente.getApellido())
+                .direccion(cliente.getDireccion())
+                .telefono(cliente.getTelefono())
+                .genero(cliente.getGenero())
+                .estado(cliente.getEstado())
+                .email(cliente.getUsuario().getEmail())
+                .pasword(cliente.getUsuario().getPassword())
+                .build();
     }
 }

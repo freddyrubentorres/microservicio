@@ -37,13 +37,13 @@ class CuentaControllerTest {
 
     @BeforeEach
     public void setup() {
-        cuentaDto = new CuentaDto(
-                "225487",
-                "1",
-                "1",
-                "JUAN",
-                "PEREZ"
-        );
+        cuentaDto=CuentaDto.builder()
+                .cuenta("225487")
+                .tipoCuenta("1")
+                .identificacionCliente("1")
+                .nombreCliente("JUAN")
+                .apellidoCliente("PEREZ")
+                .build();
         cuentaEntity = CuentaEntity.builder().build();
     }
 

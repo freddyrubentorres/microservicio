@@ -22,14 +22,15 @@ class MovimientoMapperTest {
 
     @BeforeEach
     public void setup() {
-        movimiento = new MovimientoEntity();
-        movimiento.setMonto(MONTO);
-        movimiento.setSaldodisponible(MONTO);
-        movimiento.setTipomovimiento(TipoMovimientoEntity.builder().build());
-        movimiento.setCuenta(CuentaEntity.builder()
-                .tipoCuenta(TipoCuentaEntity.builder().build())
-                .cliente(ClienteEntity.builder().build())
-                .build());
+        movimiento=MovimientoEntity.builder()
+                .monto(MONTO)
+                .saldodisponible(MONTO)
+                .tipomovimiento(TipoMovimientoEntity.builder().build())
+                .cuenta(CuentaEntity.builder()
+                        .tipoCuenta(TipoCuentaEntity.builder().build())
+                        .cliente(ClienteEntity.builder().build())
+                        .build())
+                .build();
     }
 
     @Test

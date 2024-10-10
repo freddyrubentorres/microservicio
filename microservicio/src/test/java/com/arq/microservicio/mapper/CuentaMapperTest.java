@@ -19,21 +19,18 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class CuentaMapperTest {
     CuentaEntity cuenta;
-    TipoCuentaEntity tipoCuentaEntity;
-    ClienteEntity cliente;
-
 
     @BeforeEach
     public void setup() {
-        tipoCuentaEntity = new TipoCuentaEntity();
-        tipoCuentaEntity.setId(1);
-        cliente = new ClienteEntity();
-        cliente.setIdentificacion("1715784587");
-        tipoCuentaEntity.setNombre("AHORRO");
-        cuenta = new CuentaEntity();
-        cuenta.setTipoCuenta(tipoCuentaEntity);
-        cuenta.setCliente(cliente);
-
+        cuenta=CuentaEntity.builder()
+                .tipoCuenta(TipoCuentaEntity.builder()
+                        .id(1L)
+                        .nombre("AHORRO")
+                        .build())
+                .cliente(ClienteEntity.builder()
+                        .identificacion("1715784587")
+                        .build())
+                .build();
     }
 
     @Test

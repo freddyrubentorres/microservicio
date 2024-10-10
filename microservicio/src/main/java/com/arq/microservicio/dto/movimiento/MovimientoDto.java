@@ -1,6 +1,7 @@
 package com.arq.microservicio.dto.movimiento;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Date;
  **/
 @AllArgsConstructor
 @Data
+@Builder
 public class MovimientoDto {
     private Date fecha;
     private float monto;

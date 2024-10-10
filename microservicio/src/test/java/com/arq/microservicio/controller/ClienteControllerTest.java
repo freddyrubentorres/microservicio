@@ -40,17 +40,17 @@ class ClienteControllerTest {
 
     @BeforeEach
     public void setup() {
-        clienteDto = new ClienteDto(
-                "1715789257",
-                "Jose",
-                "Lema",
-                "Otavalo sn y principal",
-                "098254785",
-                "M",
-                true,
-                "jlema@gmail.com",
-                "ysa31SlWeJfSOEGz1zai3w=="
-        );
+        clienteDto=ClienteDto.builder()
+                .identificacion("1715789257")
+                .nombre("Jose")
+                .apellido("Lema")
+                .direccion("Otavalo sn y principal")
+                .telefono("098254785")
+                .genero("M")
+                .estado(true)
+                .email("jlema@gmail.com")
+                .pasword("ysa31SlWeJfSOEGz1zai3w==")
+                .build();
         clienteEntity = ClienteEntity.builder()
                 .build();
     }

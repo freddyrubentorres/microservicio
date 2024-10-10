@@ -11,17 +11,18 @@ import com.arq.microservicio.entity.MovimientoEntity;
 
 public class MovimientoMapper {
     public static MovimientoDto mapToMovimientoDTO(MovimientoEntity movimiento) {
-        return new MovimientoDto(
-                movimiento.getFecha(),
-                movimiento.getMonto(),
-                movimiento.getSaldodisponible(),
-                movimiento.getDescripcion(),
-                movimiento.getTipomovimiento().getNombre(),
-                movimiento.getCuenta().getNumero(),
-                movimiento.getCuenta().getTipoCuenta().getNombre(),
-                movimiento.getCuenta().getCliente().getNombre(),
-                movimiento.getCuenta().getCliente().getApellido(),
-                movimiento.getCuenta().getCliente().getIdentificacion()
-        );
+        return
+                MovimientoDto.builder()
+                        .fecha(movimiento.getFecha())
+                        .monto(movimiento.getMonto())
+                        .saldoDisponible(movimiento.getSaldodisponible())
+                        .descripcion(movimiento.getDescripcion())
+                        .tipoMovimiento(movimiento.getTipomovimiento().getNombre())
+                        .numeroCuenta(movimiento.getCuenta().getNumero())
+                        .tipoCuenta(movimiento.getCuenta().getTipoCuenta().getNombre())
+                        .nombre(movimiento.getCuenta().getCliente().getNombre())
+                        .apellido(movimiento.getCuenta().getCliente().getApellido())
+                        .identificacion(movimiento.getCuenta().getCliente().getIdentificacion())
+                        .build();
     }
 }

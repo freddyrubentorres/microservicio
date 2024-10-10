@@ -118,10 +118,10 @@ class ClienteServiceTest {
     }
 
     static ClienteEntity getClienteEntity() {
-        ClienteEntity cliente = new ClienteEntity();
-        cliente.setId(1L);
-        cliente.setIdentificacion("1715478418");
-        cliente.setUsuario(UsuarioEntity.builder().email("email@gmail.com").build());
-        return cliente;
+        return ClienteEntity.builder()
+                .id(1l)
+                .identificacion("1715478418")
+                .usuario(UsuarioEntity.builder().email("email@gmail.com").build())
+                .build();
     }
 }

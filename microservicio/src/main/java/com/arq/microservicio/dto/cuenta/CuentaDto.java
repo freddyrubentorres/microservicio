@@ -1,6 +1,7 @@
 package com.arq.microservicio.dto.cuenta;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -11,6 +12,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
+@Builder
 public class CuentaDto {
     private String cuenta;
     private String tipoCuenta;

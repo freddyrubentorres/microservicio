@@ -18,6 +18,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Builder
+@Data
 @Table(name = "cliente")
 public class ClienteEntity {
     @Id

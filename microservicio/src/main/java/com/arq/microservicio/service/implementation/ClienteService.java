@@ -55,7 +55,7 @@ public class ClienteService implements IClienteService {
     }
 
     @Override
-    public ClienteEntity putCliente(ClienteEntity clienteEntity) {
+    public ClienteEntity putCliente(final ClienteEntity clienteEntity) {
         Optional<ClienteEntity> clients = iClienteRepository.findById(clienteEntity.getId());
         if (clients.isEmpty()) {
             throw new ResourceNotFoundException("Cliente con id : " + clienteEntity.getId() + ", no  encontrado.");

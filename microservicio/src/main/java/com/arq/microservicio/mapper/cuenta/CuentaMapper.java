@@ -11,11 +11,13 @@ import com.arq.microservicio.entity.CuentaEntity;
 
 public class CuentaMapper {
     public static CuentaDto mapToCuentaDTO(CuentaEntity cuenta) {
-        return new CuentaDto(cuenta.getNumero()
-                , cuenta.getTipoCuenta().getNombre()
-                , cuenta.getCliente().getIdentificacion()
-                , cuenta.getCliente().getNombre()
-                , cuenta.getCliente().getApellido()
-        );
+        return
+                CuentaDto.builder()
+                        .cuenta(cuenta.getNumero())
+                        .tipoCuenta(cuenta.getTipoCuenta().getNombre())
+                        .identificacionCliente(cuenta.getCliente().getIdentificacion())
+                        .nombreCliente(cuenta.getCliente().getNombre())
+                        .apellidoCliente(cuenta.getCliente().getApellido())
+                        .build();
     }
 }

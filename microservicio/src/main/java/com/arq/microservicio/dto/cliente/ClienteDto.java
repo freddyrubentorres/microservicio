@@ -9,6 +9,7 @@ import lombok.*;
  **/
 @AllArgsConstructor
 @Data
+@Builder
 public class ClienteDto {
     private String identificacion;
     private String nombre;

@@ -18,24 +18,24 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ClienteMapperTest {
 
-    UsuarioEntity usuario;
     ClienteEntity cliente;
 
     @BeforeEach
     public void setup() {
-        usuario = new UsuarioEntity();
-        cliente = new ClienteEntity();
-        usuario.setEmail("jlema@gmail.com");
-        usuario.setPassword("ysa31SlWeJfSOEGz1zai3w==");
-        cliente.setUsuario(usuario);
-        cliente.setIdentificacion("1715789257");
-        cliente.setNombre("Jose");
-        cliente.setApellido("Lema");
-        cliente.setDireccion("Otavalo sn y principal");
-        cliente.setTelefono("098254785");
-        cliente.setGenero("M");
-        cliente.setEstado(true);
-
+        cliente = ClienteEntity.builder()
+                .id(1L)
+                .identificacion("1715789257")
+                .nombre("Jose")
+                .apellido("Lema")
+                .direccion("Otavalo sn y principal")
+                .telefono("098254785")
+                .genero("M")
+                .estado(true)
+                .usuario(UsuarioEntity.builder()
+                        .email("jlema@gmail.com")
+                        .password("ysa31SlWeJfSOEGz1zai3w==")
+                        .build())
+                .build();
     }
 
 

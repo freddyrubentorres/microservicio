@@ -38,18 +38,18 @@ class EstadoCuentaControllerTest {
     private static final String FECHA = "2024-10-02";
     @BeforeEach
     public void setup() {
-        movimientoDto=new MovimientoDto(
-                new Date(),
-                100,
-                100,
-                "APERTUTA DE CUENTA",
-                "DEPOSITO",
-                "495879",
-                "CORRIENTE",
-                "Jose",
-                "Lema",
-                IDENTIFICACION
-        );
+        movimientoDto=MovimientoDto.builder()
+                .fecha(new Date())
+                .monto(100)
+                .saldoDisponible(100)
+                .descripcion("APERTUTA DE CUENTA")
+                .tipoMovimiento("DEPOSITO")
+                .numeroCuenta("495879")
+                .tipoCuenta("CORRIENTE")
+                .nombre("JOSE")
+                .apellido("LEMA")
+                .identificacion(IDENTIFICACION)
+                .build();
     }
 
     @Test
