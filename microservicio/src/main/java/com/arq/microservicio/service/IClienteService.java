@@ -13,12 +13,8 @@ import java.util.List;
 
 public interface IClienteService {
     List<ClienteDto> getClientes();
-
     List<ClienteDto> getClientesByIdentificacion(String identificacion);
-
     ClienteEntity saveCliente(ClienteEntity clienteEntity);
-
     boolean deleteCliente(Long clienteId);
-
     ClienteEntity putCliente(ClienteEntity clienteEntity);
 }

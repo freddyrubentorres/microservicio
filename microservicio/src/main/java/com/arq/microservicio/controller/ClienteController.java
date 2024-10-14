@@ -4,6 +4,7 @@ import com.arq.microservicio.dto.cliente.ClienteDto;
 import com.arq.microservicio.entity.ClienteEntity;
 import com.arq.microservicio.exception.ControllerHandler;
 import com.arq.microservicio.service.implementation.ClienteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -40,7 +41,7 @@ public class ClienteController {
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> postCliente(@RequestBody ClienteEntity clienteEntity) {
+    public ResponseEntity<Object> postCliente(@RequestBody @Valid ClienteEntity clienteEntity) {
         ClienteEntity createdCliente = clienteService.saveCliente(clienteEntity);
         return ControllerHandler.generateResponse(HttpStatus.OK, "SUCCESS", createdCliente);
     }

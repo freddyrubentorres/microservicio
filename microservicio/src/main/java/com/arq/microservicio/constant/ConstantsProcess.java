@@ -12,7 +12,7 @@ public final class ConstantsProcess {
     public static final String API_PATH_CLIENTES_DELETE_BY_ID = "/{clienteId}";
     public static final String API_PATH_CUENTA = "/cuenta";
     public static final String API_PATH_CUENTA_BY_NUMERO = "/{numero}";
-    public static final String API_PATH_ESTADO_CUENTA = "/estadocuenta";
+    public static final String API_PATH_ESTADO_CUENTA = "/estado";
     public static final String API_PATH_MOVIMIENTO = "/movimiento";
     public static final String API_PATH_ESTADO_CUENTA_BY_IDENTIFICACION = "/{identificacion}";
     public static final String APERTURA_CUENTA_DESC = "APERTUTA DE CUENTA";

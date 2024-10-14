@@ -1,6 +1,8 @@
 package com.arq.microservicio.dto.cliente;
 
+import com.arq.microservicio.dto.usuario.UsuarioDto;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author : Freddy Torres
@@ -9,8 +11,8 @@ import lombok.*;
  **/
 @AllArgsConstructor
 @Data
-@Builder
-public class ClienteDto {
+@SuperBuilder
+public class ClienteDto extends UsuarioDto {
     private String identificacion;
     private String nombre;
     private String apellido;
@@ -18,6 +20,4 @@ public class ClienteDto {
     private String telefono;
     private String genero;
     private Boolean estado;
-    private String email;
-    private String pasword;
 }

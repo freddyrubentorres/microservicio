@@ -9,12 +9,14 @@ import com.arq.microservicio.mapper.movimiento.MovimientoMapper;
 import com.arq.microservicio.repository.IMovimientoRepository;
 import com.arq.microservicio.service.IMovimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 import static com.arq.microservicio.constant.ConstantsProcess.*;

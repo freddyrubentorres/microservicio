@@ -10,19 +10,19 @@ import com.arq.microservicio.entity.MovimientoEntity;
  **/
 
 public class MovimientoMapper {
-    public static MovimientoDto mapToMovimientoDTO(MovimientoEntity movimiento) {
+    public static MovimientoDto mapToMovimientoDTO(MovimientoEntity movimientoEntity) {
         return
                 MovimientoDto.builder()
-                        .fecha(movimiento.getFecha())
-                        .monto(movimiento.getMonto())
-                        .saldoDisponible(movimiento.getSaldodisponible())
-                        .descripcion(movimiento.getDescripcion())
-                        .tipoMovimiento(movimiento.getTipomovimiento().getNombre())
-                        .numeroCuenta(movimiento.getCuenta().getNumero())
-                        .tipoCuenta(movimiento.getCuenta().getTipoCuenta().getNombre())
-                        .nombre(movimiento.getCuenta().getCliente().getNombre())
-                        .apellido(movimiento.getCuenta().getCliente().getApellido())
-                        .identificacion(movimiento.getCuenta().getCliente().getIdentificacion())
+                        .fecha(movimientoEntity.getFecha())
+                        .monto(movimientoEntity.getMonto())
+                        .saldoDisponible(movimientoEntity.getSaldodisponible())
+                        .descripcion(movimientoEntity.getDescripcion())
+                        .tipoMovimiento(movimientoEntity.getTipomovimiento().getNombre())
+                        .numeroCuenta(movimientoEntity.getCuenta().getNumero())
+                        .tipoCuenta(movimientoEntity.getCuenta().getTipoCuenta().getNombre())
+                        .nombre(movimientoEntity.getCuenta().getCliente().getNombre())
+                        .apellido(movimientoEntity.getCuenta().getCliente().getApellido())
+                        .identificacion(movimientoEntity.getCuenta().getCliente().getIdentificacion())
                         .build();
     }
 }

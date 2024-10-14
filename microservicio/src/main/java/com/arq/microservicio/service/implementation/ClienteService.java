@@ -8,7 +8,6 @@ import com.arq.microservicio.repository.IClienteRepository;
 import com.arq.microservicio.service.IClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -25,7 +24,8 @@ public class ClienteService implements IClienteService {
     IClienteRepository iClienteRepository;
 
     @Override
-    public List<ClienteDto> getClientes() {
+    public List<ClienteDto> getClientes()  {
+
         List<ClienteEntity> clienteEntity = iClienteRepository.findAll();
         return clienteEntity.stream().map(ClienteMapper::mapToClienteDTO).collect(Collectors.toList());
     }

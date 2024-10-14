@@ -1,7 +1,9 @@
 package com.arq.microservicio.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Date;
@@ -24,22 +26,29 @@ public class MovimientoEntity {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "descripcion")
+    @NotBlank(message = "{movimiento.descripcion.missing}")
+    @Size(min = 10, max = 255, message = "{movimiento.descripcion.size}")
+    private String descripcion;
+
     @Column(name = "fecha")
     private Date fecha;
-    @NotNull
+
+    @NotNull(message = "{movimiento.monto.missing}")
     @Column(name = "monto")
     private Float monto;
-    @NotNull
+
     @Column(name = "saldodisponible")
     private Float saldodisponible;
-    @NotNull
-    @Column(name = "descripcion")
-    private String descripcion;
+
     @Column(name = "fechahora")
     private Date fechahora;
+
     @OneToOne()
     @JoinColumn(name = "tipomovimiento")
     private TipoMovimientoEntity tipomovimiento;
+
     @OneToOne()
     @JoinColumn(name = "cuenta")
     private CuentaEntity cuenta;

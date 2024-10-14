@@ -28,7 +28,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class EstadoCuentaControllerTest {
     @InjectMocks
-    private EstadoCuentaController estadoCuentaController;
+    private CuentaController cuentaController;
     @Mock
     private MovimientoService movimientoService;
 
@@ -58,7 +58,7 @@ class EstadoCuentaControllerTest {
         List<MovimientoDto> movimiento = Collections.singletonList(movimientoDto);
         // When
         when(movimientoService.getEstadoCuenta(IDENTIFICACION,FECHA,FECHA)).thenReturn(movimiento);
-        ResponseEntity<Object> response = estadoCuentaController.getEstadoCuenta(IDENTIFICACION,FECHA,FECHA);
+        ResponseEntity<Object> response = cuentaController.getEstadoCuenta(IDENTIFICACION,FECHA,FECHA);
         // Then
         assertEquals(HttpStatus.OK, response.getStatusCode());
     }

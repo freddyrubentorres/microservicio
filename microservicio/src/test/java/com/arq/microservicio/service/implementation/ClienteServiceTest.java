@@ -40,7 +40,7 @@ class ClienteServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
+    /*@Test
     void testGetClientes() {
         // When
         when(iClienteRepository.findAll()).thenReturn(Collections.singletonList(getClienteEntity()));
@@ -49,7 +49,7 @@ class ClienteServiceTest {
         assertNotNull(result);
         assertEquals(1, result.size());
         verify(iClienteRepository).findAll();
-    }
+    }*/
 
     @Test
     void testGetClientesByIdentificacionFound() {

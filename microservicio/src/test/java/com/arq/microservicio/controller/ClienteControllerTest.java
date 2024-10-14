@@ -54,7 +54,6 @@ class ClienteControllerTest {
         clienteEntity = ClienteEntity.builder()
                 .build();
     }
-
     @Test
     public void getClientes_OK() {
         // Given

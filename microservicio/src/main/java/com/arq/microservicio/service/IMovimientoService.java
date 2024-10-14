@@ -5,6 +5,7 @@ import com.arq.microservicio.entity.MovimientoEntity;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author : Freddy Torres

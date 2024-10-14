@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class MovimientoControllerTest {
     @InjectMocks
-    private MovimientoController movimientoController;
+    private CuentaController cuentaController;
     @Mock
     private MovimientoService movimientoService;
 
@@ -31,7 +31,7 @@ class MovimientoControllerTest {
     public void postMovimiento_OK() {
         // When
         when(movimientoService.saveMovimiento(Mockito.any())).thenReturn(getMovimientoEntity());
-        ResponseEntity<Object> response = movimientoController.postMovimiento(getMovimientoEntity());
+        ResponseEntity<Object> response = cuentaController.postMovimiento(getMovimientoEntity());
         // Then
         assertEquals(HttpStatus.OK, response.getStatusCode());
     }
