@@ -51,7 +51,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"identificacion\":\"1717703969\",\r\n    \"nombre\":\"Freddy\",\r\n    \"apellido\":\"Torres\",\r\n    \"direccion\":\"San Fernando\",\r\n    \"telefono\":\"0995418834\",\r\n    \"genero\":\"M\",\r\n    \"estado\":true,\r\n    \"usuario\":{\r\n      \"email\":\"ftorres@gmail.com\",\r\n      \"password\":\"ysa31SlWeJfSOEGz1zai3w==\",\r\n      \"estado\":true,\r\n      \"fechaCreacion\":\"2024-09-30\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"identificacion\":\"1717703969\",\r\n    \"nombre\":\"Freddy\",\r\n    \"apellido\":\"Torres\",\r\n    \"direccion\":\"San Fernando\",\r\n    \"telefono\":\"0995418834\",\r\n    \"genero\":\"M\",\r\n    \"estado\":true,\r\n    \"usuario\":{\r\n      \"email\":\"ftorres@gmail1.com\",\r\n      \"password\":\"9CNoF334j6FEdfNbsMKmZg==\",\r\n      \"estado\":true\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,46 +186,36 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "reporte",
-			"item": [
+				},
 				{
 					"name": "getEstadoCuenta",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{scheme}}://{{host}}:{{port}}{{estadocuenta_path}}/1717703969?fechainicio=2024-10-02&fechafin=2024-10-03",
+							"raw": "{{scheme}}://{{host}}:{{port}}{{estadocuenta_path}}/1715789257?fechainicio=2024-10-14&fechafin=2024-10-14",
 							"protocol": "{{scheme}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}{{estadocuenta_path}}",
 							"path": [
-								"1717703969"
+								"1715789257"
 							],
 							"query": [
 								{
 									"key": "fechainicio",
-									"value": "2024-10-02"
+									"value": "2024-10-14"
 								},
 								{
 									"key": "fechafin",
-									"value": "2024-10-03"
+									"value": "2024-10-14"
 								}
 							]
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "movimiento",
-			"item": [
+				},
 				{
 					"name": "postMovimientoDebito",
 					"request": {
@@ -233,7 +223,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"cuenta\":{\r\n    \"id\":5\r\n   },\r\n   \"tipomovimiento\":{\r\n    \"id\":1,\r\n    \"nombre\":\"DEBITO\"\r\n   },\r\n   \"monto\":\"450\",\r\n   \"descripcion\":\"PAGO PENSION \"\r\n}",
+							"raw": "{\r\n   \"cuenta\":{\r\n    \"id\":1\r\n   },\r\n   \"tipomovimiento\":{\r\n    \"id\":1,\r\n    \"nombre\":\"DEBITO\"\r\n   },\r\n   \"monto\":\"450\",\r\n   \"descripcion\":\"PAGO PENSION \"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +248,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"cuenta\":{\r\n    \"id\":5\r\n   },\r\n   \"tipomovimiento\":{\r\n    \"id\":2,\r\n    \"nombre\":\"DEPOSITO\"\r\n   },\r\n   \"monto\":\"2500\",\r\n   \"descripcion\":\"PAGO SUELDO\"\r\n}",
+							"raw": "{\r\n   \"cuenta\":{\r\n    \"id\":1\r\n   },\r\n   \"tipomovimiento\":{\r\n    \"id\":2,\r\n    \"nombre\":\"DEPOSITO\"\r\n   },\r\n   \"monto\":\"2500\",\r\n   \"descripcion\":\"PAGO SUELDO\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
